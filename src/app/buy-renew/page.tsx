@@ -23,7 +23,7 @@ export default function BuyRenewPage() {
           {/* Starter Plan */}
           <div className="flex flex-col rounded-xl border border-white/5 bg-[#0b1220]/80 p-4 text-sm">
             <div className="mb-1 text-xs font-semibold text-slate-400">Starter</div>
-            <div className="mb-2 text-2xl font-bold">$15</div>
+            <div className="mb-2 text-2xl font-bold">$150</div>
             <div className="mb-3 text-[11px] text-slate-400">
               For individual SEOs who need essential tools only.
             </div>
@@ -46,7 +46,7 @@ export default function BuyRenewPage() {
                 Most Popular
               </span>
             </div>
-            <div className="mb-2 mt-1 text-2xl font-bold">$29</div>
+            <div className="mb-2 mt-1 text-2xl font-bold">$290</div>
             <div className="mb-3 text-[11px] text-slate-200">
               Full access to all {totalTools}+ tools (crawlers, keywords,
               backlinks, indexing, AI writers and more).
@@ -65,7 +65,7 @@ export default function BuyRenewPage() {
           {/* Agency Plan */}
           <div className="flex flex-col rounded-xl border border-white/5 bg-[#0b1220]/80 p-4 text-sm">
             <div className="mb-1 text-xs font-semibold text-slate-400">Agency</div>
-            <div className="mb-2 text-2xl font-bold">$59</div>
+            <div className="mb-2 text-2xl font-bold">$590</div>
             <div className="mb-3 text-[11px] text-slate-400">
               For growing agencies managing multiple teams and clients.
             </div>
