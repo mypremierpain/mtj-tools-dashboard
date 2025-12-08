@@ -1,83 +1,101 @@
 // src/app/buy-renew/page.tsx
 import DashboardShell from "../components/DashboardShell";
 import { tools } from "../tools/tools-data";
+import Link from "next/link";
 
 export default function BuyRenewPage() {
   const totalTools = tools.length;
 
   return (
     <DashboardShell>
-      <div className="space-y-5">
+      <div className="space-y-5 text-[18px]">
+        
         {/* Intro Card */}
-        <div className="rounded-xl border border-white/5 bg-[#0b1220]/80 p-4 text-sm">
-          <div className="text-sm font-semibold">Buy / Renew Subscription</div>
-          <p className="mt-1 text-xs text-slate-400">
+        <div className="rounded-xl border border-white/5 bg-[#0b1220]/80 p-6">
+          <div className="text-lg font-semibold">Buy / Renew Subscription</div>
+          <p className="mt-2 text-slate-400">
             All plans include access to {totalTools}+ SEO, Marketing, Backlink,
             Indexing, Local & AI Tools.
           </p>
         </div>
 
         {/* Pricing Grid */}
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-3">
           
           {/* Starter Plan */}
-          <div className="flex flex-col rounded-xl border border-white/5 bg-[#0b1220]/80 p-4 text-sm">
-            <div className="mb-1 text-xs font-semibold text-slate-400">Starter</div>
-            <div className="mb-2 text-2xl font-bold">$150</div>
-            <div className="mb-3 text-[11px] text-slate-400">
-              For individual SEOs who need essential tools only.
-            </div>
-            <ul className="mb-4 space-y-1 text-[11px] text-slate-300">
+          <div className="flex flex-col rounded-xl border border-white/5 bg-[#0b1220]/80 p-6">
+            <div className="text-slate-400 font-semibold">Starter</div>
+            <div className="text-4xl font-bold mt-2">$150</div>
+            <p className="mt-3 text-slate-300">
+              For individuals who need essential SEO tools.
+            </p>
+
+            <ul className="mt-4 space-y-2 text-slate-200">
               <li>• Access to 20 core tools</li>
               <li>• 1 user</li>
               <li>• Basic support</li>
               <li>• Monthly billing</li>
             </ul>
-            <button className="mt-auto rounded-lg bg-white/10 px-3 py-2 text-[11px] font-semibold hover:bg-white/20">
+
+            <Link
+              href="/purchase?plan=starter"
+              className="mt-auto rounded-lg bg-white/10 px-4 py-3 text-center font-semibold hover:bg-white/20 mt-6"
+            >
               Buy Starter
-            </button>
+            </Link>
           </div>
 
           {/* Pro Plan */}
-          <div className="flex flex-col rounded-xl border border-indigo-500/70 bg-gradient-to-b from-indigo-500/15 to-[#0b1220] p-4 text-sm shadow-lg shadow-indigo-500/20">
+          <div className="flex flex-col rounded-xl border border-indigo-500/70 bg-gradient-to-b from-indigo-500/15 to-[#0b1220] p-6 shadow-lg shadow-indigo-500/20">
             <div className="flex items-center justify-between">
-              <div className="text-xs font-semibold text-indigo-300">Pro</div>
-              <span className="rounded-full bg-indigo-500 px-2 py-0.5 text-[10px] font-semibold">
+              <div className="font-semibold text-indigo-300">Pro</div>
+              <span className="rounded-full bg-indigo-500 px-3 py-1 text-xs font-semibold">
                 Most Popular
               </span>
             </div>
-            <div className="mb-2 mt-1 text-2xl font-bold">$290</div>
-            <div className="mb-3 text-[11px] text-slate-200">
-              Full access to all {totalTools}+ tools (crawlers, keywords,
-              backlinks, indexing, AI writers and more).
-            </div>
-            <ul className="mb-4 space-y-1 text-[11px] text-slate-100">
+
+            <div className="text-4xl font-bold mt-2">$290</div>
+            <p className="mt-3 text-slate-200">
+              Full access to {totalTools}+ tools including AI writers, keyword
+              research, crawlers, backlinks & indexing tools.
+            </p>
+
+            <ul className="mt-4 space-y-2 text-slate-100">
               <li>• All tools included</li>
               <li>• Up to 3 sub-users</li>
               <li>• Priority support</li>
               <li>• Monthly or yearly billing</li>
             </ul>
-            <button className="mt-auto rounded-lg bg-indigo-500 px-3 py-2 text-[11px] font-semibold hover:bg-indigo-600">
+
+            <Link
+              href="/purchase?plan=pro"
+              className="mt-auto rounded-lg bg-indigo-500 px-4 py-3 text-center font-semibold hover:bg-indigo-600 mt-6"
+            >
               Buy / Renew Pro
-            </button>
+            </Link>
           </div>
 
           {/* Agency Plan */}
-          <div className="flex flex-col rounded-xl border border-white/5 bg-[#0b1220]/80 p-4 text-sm">
-            <div className="mb-1 text-xs font-semibold text-slate-400">Agency</div>
-            <div className="mb-2 text-2xl font-bold">$590</div>
-            <div className="mb-3 text-[11px] text-slate-400">
+          <div className="flex flex-col rounded-xl border border-white/5 bg-[#0b1220]/80 p-6">
+            <div className="text-slate-400 font-semibold">Agency</div>
+            <div className="text-4xl font-bold mt-2">$590</div>
+            <p className="mt-3 text-slate-300">
               For growing agencies managing multiple teams and clients.
-            </div>
-            <ul className="mb-4 space-y-1 text-[11px] text-slate-300">
-              <li>• All Pro tools + API</li>
+            </p>
+
+            <ul className="mt-4 space-y-2 text-slate-200">
+              <li>• All Pro features + API access</li>
               <li>• Up to 10 sub-users</li>
               <li>• Advanced analytics</li>
               <li>• Priority onboarding</li>
             </ul>
-            <button className="mt-auto rounded-lg bg-white/10 px-3 py-2 text-[11px] font-semibold hover:bg-white/20">
+
+            <Link
+              href="/purchase?plan=agency"
+              className="mt-auto rounded-lg bg-white/10 px-4 py-3 text-center font-semibold hover:bg-white/20 mt-6"
+            >
               Contact Sales
-            </button>
+            </Link>
           </div>
 
         </div>
