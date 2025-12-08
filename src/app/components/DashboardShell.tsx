@@ -23,7 +23,13 @@ const menu = [
   { label: "Logout", href: "/logout" },
 ];
 
-function MenuLinks({ pathname, onClick }: { pathname: string; onClick?: () => void }) {
+function MenuLinks({
+  pathname,
+  onClick,
+}: {
+  pathname: string;
+  onClick?: () => void;
+}) {
   return (
     <nav className="flex flex-col gap-1.5">
       {menu.map((item) => {
@@ -53,15 +59,18 @@ export default function DashboardShell({ children }: DashboardShellProps) {
 
   return (
     <div className="flex min-h-screen bg-[#020617]">
-      {/* 🟣 Mobile top bar with hamburger */}
-      <header className="fixed left-0 top-0 z-30 flex w-full items-center justify-between border-b border-white/5 bg-[#020617]/95 px-4 py-3 md:hidden">
+      {/* 🔵 Top header (visible on ALL screens) */}
+      <header className="fixed left-0 top-0 z-30 flex w-full items-center justify-between border-b border-white/5 bg-[#020617]/95 px-4 py-3">
+        {/* Hamburger only on small screens */}
         <button
           onClick={() => setMobileOpen(true)}
-          className="rounded-md border border-white/10 bg-white/5 px-3 py-1.5 text-sm font-medium text-slate-100"
+          className="rounded-md border border-white/10 bg-white/5 px-3 py-1.5 text-sm font-medium text-slate-100 md:hidden"
         >
           ☰ Menu
         </button>
-        <div className="flex items-center gap-2">
+
+        {/* Brand (center/right on mobile, left on desktop) */}
+        <div className="ml-auto flex items-center gap-2 md:ml-0">
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-500 text-sm font-bold text-white">
             MTJ
           </div>
@@ -72,32 +81,23 @@ export default function DashboardShell({ children }: DashboardShellProps) {
         </div>
       </header>
 
-      {/* 🟣 Desktop sidebar */}
-      <aside className="hidden w-64 flex-col border-r border-white/5 bg-[#0b1220] p-5 md:flex">
-        <div className="mb-8 flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-500 text-base font-bold text-white">
-            MTJ
-          </div>
-          <div>
-            <div className="text-base font-semibold text-white">MTJ Tools</div>
-            <div className="text-[12px] text-slate-400">SEO • Marketing • AI</div>
-          </div>
-        </div>
-
+      {/* 🟣 Desktop sidebar (md and up) */}
+      <aside className="hidden w-64 flex-col border-r border-white/5 bg-[#0b1220] p-5 pt-20 md:flex">
+        {/* we already show logo in header, so no need to repeat if you don’t want */}
         <MenuLinks pathname={pathname} />
       </aside>
 
-      {/* 🟣 Mobile slide-in sidebar */}
+      {/* 🟣 Mobile slide-in sidebar (only on small screens) */}
       {mobileOpen && (
         <div className="fixed inset-0 z-40 flex md:hidden">
-          {/* backdrop */}
+          {/* Backdrop */}
           <div
             className="flex-1 bg-black/60"
             onClick={() => setMobileOpen(false)}
           />
-          {/* panel */}
-          <aside className="flex w-64 flex-col border-l border-white/10 bg-[#0b1220] p-5">
-            <div className="mb-6 flex items-center justify-between">
+          {/* Panel */}
+          <aside className="flex w-64 flex-col border-l border-white/10 bg-[#0b1220] p-5 pt-6">
+            <div className="mb-5 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-500 text-sm font-bold text-white">
                   MTJ
@@ -126,7 +126,7 @@ export default function DashboardShell({ children }: DashboardShellProps) {
       )}
 
       {/* 🟣 Right content area */}
-      <main className="flex-1 px-3 pb-6 pt-16 md:px-8 md:py-8 md:pt-8">
+      <main className="flex-1 px-3 pb-6 pt-16 md:px-8 md:py-8 md:pt-20">
         <div className="mx-auto max-w-[1400px]">{children}</div>
       </main>
     </div>
