@@ -254,15 +254,7 @@ export default function DashboardPage() {
                   Billing &amp; plans
                 </span>
               </Link>
-              <Link
-                href="/store-credits"
-                className="flex items-center justify-between rounded-xl bg-slate-50 px-3 py-2 text-[11px] hover:bg-indigo-50/70"
-              >
-                <span className="text-slate-700">Buy or use store credits</span>
-                <span className="text-[10px] text-slate-500">
-                  Indexing &amp; add-ons
-                </span>
-              </Link>
+              
               <Link
                 href="/contact-us"
                 className="flex items-center justify-between rounded-xl bg-slate-50 px-3 py-2 text-[11px] hover:bg-indigo-50/70"

@@ -32,66 +32,63 @@ export default function BuyDomainsPage() {
 
   return (
     <DashboardShell>
-      <div className="space-y-4">
+      <div className="space-y-6 text-[14px]">
         {/* Header card */}
-        <div className="rounded-xl border border-white/5 bg-[#0b1220]/80 p-4 text-sm">
-          <div className="text-sm font-semibold">Buy Domains</div>
-          <p className="mt-1 text-xs text-slate-400">
+        <div className="rounded-xl border border-white/5 bg-[#0b1220]/80 p-6">
+          <div className="font-semibold text-[16px]">Buy Domains</div>
+          <p className="mt-2 text-slate-400 text-[16px]">
             Use this space to plan SEO-friendly domains for new projects,
-            microsites, or local lead-gen assets. Later you can connect this
-            section to a registrar API if you want to automate purchases.
+            microsites, or local lead-gen assets. Later, you can integrate
+            registrar APIs to automate purchases.
           </p>
         </div>
 
         {/* Two-column layout */}
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2">
           {/* Suggestions card */}
-          <div className="rounded-xl border border-white/5 bg-[#020617]/70 p-4 text-xs">
-            <div className="text-sm font-semibold">Domain ideas</div>
-            <p className="mt-1 text-[11px] text-slate-400">
-              Example names you might use for local SEO projects or niche
-              websites.
+          <div className="rounded-xl border border-white/5 bg-[#020617]/70 p-6">
+            <div className="font-semibold text-[16px]">Domain Ideas</div>
+            <p className="mt-2 text-slate-400 text-[16px]">
+              Example domain names suitable for SEO projects or niche websites.
             </p>
 
-            <ul className="mt-3 space-y-1.5 text-slate-200">
+            <ul className="mt-4 space-y-2">
               {ideas.map((name) => (
                 <li
                   key={name}
-                  className="flex items-center justify-between rounded-lg bg-white/5 px-3 py-2"
+                  className="flex items-center justify-between rounded-lg bg-white/5 px-4 py-3"
                 >
-                  <span className="text-[11px] font-mono">{name}</span>
-                  <button className="text-[10px] font-semibold text-indigo-400 hover:text-indigo-300">
+                  <span className="font-mono text-[16px]">{name}</span>
+                  <button className="text-indigo-400 hover:text-indigo-300 font-semibold text-[16px]">
                     Check availability
                   </button>
                 </li>
               ))}
             </ul>
 
-            <p className="mt-3 text-[11px] text-slate-500">
-              You can later add a &quot;Check availability&quot; API call here
-              to query prices and TLD availability in real-time.
+            <p className="mt-4 text-slate-500 text-[16px]">
+              You can later connect a domain availability API to fetch live
+              prices and TLD options.
             </p>
           </div>
 
           {/* Registrars card */}
-          <div className="rounded-xl border border-white/5 bg-[#020617]/70 p-4 text-xs">
-            <div className="text-sm font-semibold">Popular registrars</div>
-            <p className="mt-1 text-[11px] text-slate-400">
-              Click any registrar to search for your domain and complete the
-              purchase there.
+          <div className="rounded-xl border border-white/5 bg-[#020617]/70 p-6">
+            <div className="font-semibold text-[16px]">Popular Registrars</div>
+            <p className="mt-2 text-slate-400 text-[16px]">
+              Click any registrar to search your domain and complete the
+              purchase on their platform.
             </p>
 
-            <div className="mt-3 space-y-2">
+            <div className="mt-4 space-y-3">
               {registrars.map((reg) => (
                 <div
                   key={reg.name}
-                  className="flex items-center justify-between rounded-lg bg-white/5 px-3 py-2"
+                  className="flex items-center justify-between rounded-lg bg-white/5 px-4 py-3"
                 >
                   <div>
-                    <div className="text-[11px] font-semibold">
-                      {reg.name}
-                    </div>
-                    <div className="text-[10px] text-slate-400">
+                    <div className="font-semibold text-[16px]">{reg.name}</div>
+                    <div className="text-slate-400 text-[16px]">
                       {reg.note}
                     </div>
                   </div>
@@ -99,7 +96,7 @@ export default function BuyDomainsPage() {
                     onClick={() =>
                       window.open(reg.url, "_blank", "noopener,noreferrer")
                     }
-                    className="rounded-lg bg-indigo-500 px-3 py-1.5 text-[10px] font-semibold hover:bg-indigo-600"
+                    className="rounded-lg bg-indigo-500 px-4 py-2 font-semibold text-[16px] hover:bg-indigo-600"
                   >
                     Open
                   </button>
@@ -107,9 +104,9 @@ export default function BuyDomainsPage() {
               ))}
             </div>
 
-            <p className="mt-3 text-[11px] text-slate-500">
-              You can store preferred registrars for each client or project, and
-              track which domains you already own.
+            <p className="mt-4 text-slate-500 text-[16px]">
+              You can store preferred registrars for projects and track which
+              domains you already own.
             </p>
           </div>
         </div>

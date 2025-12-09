@@ -8,7 +8,7 @@ export default function BuyRenewPage() {
 
   return (
     <DashboardShell>
-      <div className="space-y-5 text-[18px]">
+      <div className="space-y-5 text-[16px]">
         
         {/* Intro Card */}
         <div className="rounded-xl border border-white/5 bg-[#0b1220]/80 p-6">

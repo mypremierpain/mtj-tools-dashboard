@@ -5,16 +5,11 @@ export default function SubUsersPage() {
   const subUsers = [
     {
       name: "Premier Pain Centers",
-      email: "ali@example.com",
+      email: "premierpaincenters@gmail.com",
       role: "Editor",
       status: "Active",
     },
-    {
-      name: "Sara Khan",
-      email: "sara@example.com",
-      role: "Viewer",
-      status: "Active",
-    },
+  
   ];
 
   const maxUsers = 3;
